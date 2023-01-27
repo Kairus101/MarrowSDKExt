@@ -65,6 +65,10 @@ namespace SLZ.MarrowEditor
                 if (AssetWarehouse.Instance == null)
                 {
                     EditorGUILayout.HelpBox("AssetWarehouse is NULL!", MessageType.Error);
+                    if (!Application.isPlaying && !EditorApplication.isPlayingOrWillChangePlaymode)
+                    {
+                    new AssetWarehouse();
+                    }
                 }
                 else
                 {
